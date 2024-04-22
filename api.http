@@ -1,0 +1,39 @@
+###creacion de ruta para home
+GET http://localhost:4999/
+
+###obtener todas las peliculas
+GET http://localhost:4999/peliculas
+
+###obtener peliculas por id
+GET http://localhost:4999/peliculas/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+###obtener peliculas por genero y año
+GET http://localhost:4999/peliculas?genre=DramA&year=1994
+
+###creacion de peliculas
+POST http://localhost:4999/peliculas
+Content-Type: application/json
+
+{
+    "title": "El Apostador",
+    "year": 1999,
+    "director": "Franklin...",
+    "duration": 142,
+    "genre": [
+      "Drama"
+    ],
+    "rate": 10,
+    "poster" : "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2014/12/428340-critica-jugador-mark-wahlberg.jpg?tf=3840x"
+  }
+
+### Modificacion de pelicula
+PATCH http://localhost:4999/peliculas/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "title" : "El ludopata",
+  "year" : 2011
+}
+
+### Eliminacion de pelicula
+DELETE  http://localhost:4999/peliculas/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
