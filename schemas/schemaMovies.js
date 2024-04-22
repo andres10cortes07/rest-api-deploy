@@ -1,5 +1,5 @@
-const zod = require("zod")
-const date = new Date
+import zod from "zod";
+const date = new Date;
     
 // creamos el esquema que deberia tener la pelicula con zod
 const EsquemaPelicula = zod.object({
@@ -24,17 +24,13 @@ const EsquemaPelicula = zod.object({
     )
 })
 
-const validarPelicula = (object)=>{
+export const validarPelicula = (object)=>{
     return EsquemaPelicula.safeParse(object)
 }
 
-const validarModificacionPelicula = (object)=>{
+export const validarModificacionPelicula = (object)=>{
     // lo que hace el partial es usar el mismo esquema que se creo pero unicamente validara los elementos que SI le lleguen
     // si le llega titulo, año, genero, validara las tres con las caracteristicas que se le dieron en el esquema principal
     return EsquemaPelicula.partial().safeParse(object)
 }
 
-module.exports = {
-    validarPelicula,
-    validarModificacionPelicula
-}

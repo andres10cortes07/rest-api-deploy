@@ -2,6 +2,7 @@
   "name": "curso3",
   "description": "Curso 3 API REST",
   "main": "1.app.js",
+  "type": "module",
   "scripts": {
     "start": "node 1.app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
