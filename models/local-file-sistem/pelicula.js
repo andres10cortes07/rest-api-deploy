@@ -1,5 +1,11 @@
 import {readJSON} from "../../utils.js";
 import {randomUUID} from "node:crypto";
+
+
+// en ECM (ecma script modules) no funciona el extraer un json asi)
+// se podria extraer la info con fs (file sistem)
+// import fs from "node:fs";
+// const peliculas = JSON.parse(fs.readFile("./peliculas.json"));
 const peliculas = readJSON("./peliculas.json");
 
 export class modeloPelicula {

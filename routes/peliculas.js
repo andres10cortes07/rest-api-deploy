@@ -5,11 +5,6 @@ import { controllerPeliculas } from "../controllers/peliculas.js";
 import { Router } from "express";
 export const routerPeliculas = Router()
 
-// en ECM (ecma script modules) no funciona el extraer un json asi)
-// se podria extraer la info con fs (file sistem)
-// import fs from "node:fs";
-// const peliculas = JSON.parse(fs.readFile("./peliculas.json"));
-
 //* en este caso no se coloca la ruta "/movies" porque este archivo solo respondera a las rutas que contengan /movies
 //? para la peticion de buscar peliculas por genero y año se debe modificar el endpoint principal
 routerPeliculas.get("/", controllerPeliculas.getAll)
